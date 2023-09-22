@@ -30,7 +30,6 @@ public class InsuranceJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        statementTx = new javax.swing.JTextField();
         installmentTx = new javax.swing.JTextField();
         locationTx = new javax.swing.JTextField();
         deductibleTx = new javax.swing.JTextField();
@@ -41,6 +40,8 @@ public class InsuranceJPanel extends javax.swing.JPanel {
         statementlbl = new javax.swing.JLabel();
         deductiblelbl = new javax.swing.JLabel();
         insuranceSavebtn = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        statementTx = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Insurance Information", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semibold", 1, 18))); // NOI18N
@@ -70,7 +71,7 @@ public class InsuranceJPanel extends javax.swing.JPanel {
         insuranceID.setText("Insurance Company ID *");
 
         installationlbl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        installationlbl.setText("Installation *");
+        installationlbl.setText("Premium*");
 
         statementlbl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         statementlbl.setText("Benefit Statement");
@@ -88,6 +89,10 @@ public class InsuranceJPanel extends javax.swing.JPanel {
             }
         });
 
+        statementTx.setColumns(20);
+        statementTx.setRows(5);
+        jScrollPane1.setViewportView(statementTx);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -104,15 +109,15 @@ public class InsuranceJPanel extends javax.swing.JPanel {
                             .addComponent(insuranceID, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(35, 35, 35)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(insuranceTx)
                             .addComponent(locationTx)
                             .addComponent(installmentTx)
                             .addComponent(deductibleTx)
-                            .addComponent(statementTx, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(insuranceTx)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 304, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(163, 163, 163)
                         .addComponent(insuranceSavebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(150, Short.MAX_VALUE))
+                .addContainerGap(190, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,13 +138,16 @@ public class InsuranceJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(deductiblelbl)
                     .addComponent(deductibleTx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(statementlbl)
-                    .addComponent(statementTx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(statementlbl))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(insuranceSavebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addGap(16, 16, 16))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -213,9 +221,10 @@ public class InsuranceJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel insuranceID;
     private javax.swing.JButton insuranceSavebtn;
     private javax.swing.JTextField insuranceTx;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField locationTx;
     private javax.swing.JLabel locationlbl;
-    private javax.swing.JTextField statementTx;
+    private javax.swing.JTextArea statementTx;
     private javax.swing.JLabel statementlbl;
     // End of variables declaration//GEN-END:variables
 }

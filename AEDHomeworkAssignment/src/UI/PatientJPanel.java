@@ -16,9 +16,13 @@ public class PatientJPanel extends javax.swing.JPanel {
      * Creates new form PatientJPanel
      */
     Patient patient;
-    public PatientJPanel(Patient patient) {
+    Insurance insurance;
+    Doctor doctor;
+    public PatientJPanel(Patient patient, Insurance insurance, Doctor doctor) {
         initComponents();
         this.patient = patient;
+        this.doctor = doctor;
+        this.insurance = insurance;
     }
 
     /**
@@ -32,198 +36,631 @@ public class PatientJPanel extends javax.swing.JPanel {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
-        SaveButton = new javax.swing.JButton();
-        patientIDlbl = new javax.swing.JLabel();
-        primaryDoctorTx = new javax.swing.JTextField();
-        patientIDTx = new javax.swing.JTextField();
-        primaryDoctorlbl = new javax.swing.JLabel();
-        lastVisitDatelbl = new javax.swing.JLabel();
-        nextAppointmentDatelbl = new javax.swing.JLabel();
         ownerNamelbl = new javax.swing.JLabel();
-        onMedicationYesRb = new javax.swing.JRadioButton();
-        allergieslbl = new javax.swing.JLabel();
-        allergiesNoRb = new javax.swing.JRadioButton();
-        onMedicationlbl = new javax.swing.JLabel();
-        onMedicationNoRb = new javax.swing.JRadioButton();
-        allergiesYesRb = new javax.swing.JRadioButton();
-        lastVisitDate = new com.toedter.calendar.JDateChooser();
-        NewAppointmentDate = new com.toedter.calendar.JDateChooser();
+        jPanel4 = new javax.swing.JPanel();
+        primaryDoctorlbl1 = new javax.swing.JLabel();
+        NewAppointmentDate1 = new com.toedter.calendar.JDateChooser();
+        lastVisitDatelbl1 = new javax.swing.JLabel();
+        nextAppointmentDatelbl1 = new javax.swing.JLabel();
+        onMedicationYesRb1 = new javax.swing.JRadioButton();
+        allergieslbl1 = new javax.swing.JLabel();
+        allergiesNoRb1 = new javax.swing.JRadioButton();
+        onMedicationlbl1 = new javax.swing.JLabel();
+        patientIDlbl1 = new javax.swing.JLabel();
+        onMedicationNoRb1 = new javax.swing.JRadioButton();
+        primaryDoctorTx1 = new javax.swing.JTextField();
+        allergiesYesRb1 = new javax.swing.JRadioButton();
+        patientIDTx1 = new javax.swing.JTextField();
+        lastVisitDate1 = new com.toedter.calendar.JDateChooser();
+        jPanel2 = new javax.swing.JPanel();
+        insuranceID = new javax.swing.JLabel();
+        installationlbl = new javax.swing.JLabel();
+        statementlbl = new javax.swing.JLabel();
+        deductiblelbl = new javax.swing.JLabel();
+        installmentTx = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        statementTx = new javax.swing.JTextArea();
+        locationTx = new javax.swing.JTextField();
+        deductibleTx = new javax.swing.JTextField();
+        insuranceTx = new javax.swing.JTextField();
+        locationlbl = new javax.swing.JLabel();
+        insuranceSavebtn = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        Specializationlbl = new javax.swing.JLabel();
+        annualIncomelbl = new javax.swing.JLabel();
+        workcityTx = new javax.swing.JTextField();
+        annualIncomeTx = new javax.swing.JTextField();
+        feebl = new javax.swing.JLabel();
+        feeTx = new javax.swing.JTextField();
+        specializationTx = new javax.swing.JTextField();
+        namelbl = new javax.swing.JLabel();
+        workcitylbl = new javax.swing.JLabel();
+        educationTx = new javax.swing.JTextField();
+        doctorIDTx = new javax.swing.JTextField();
+        nameTx = new javax.swing.JTextField();
+        doctorIDlbl = new javax.swing.JLabel();
+        educationlbl = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Patient Information", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI Semibold", 1, 18))); // NOI18N
 
-        SaveButton.setBackground(new java.awt.Color(0, 0, 102));
-        SaveButton.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        SaveButton.setForeground(new java.awt.Color(255, 255, 255));
-        SaveButton.setText("Save");
-        SaveButton.addActionListener(new java.awt.event.ActionListener() {
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Patient Information", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+
+        primaryDoctorlbl1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        primaryDoctorlbl1.setText("Primary Doctor");
+
+        lastVisitDatelbl1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        lastVisitDatelbl1.setText("Last Visit Date");
+
+        nextAppointmentDatelbl1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        nextAppointmentDatelbl1.setText("Next Appointment Date");
+
+        buttonGroup2.add(onMedicationYesRb1);
+        onMedicationYesRb1.setText("Yes");
+
+        allergieslbl1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        allergieslbl1.setText("Allergies");
+
+        buttonGroup1.add(allergiesNoRb1);
+        allergiesNoRb1.setText("No");
+
+        onMedicationlbl1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        onMedicationlbl1.setText("On Medication");
+
+        patientIDlbl1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        patientIDlbl1.setText("Patient ID *");
+
+        buttonGroup2.add(onMedicationNoRb1);
+        onMedicationNoRb1.setText("No");
+
+        buttonGroup1.add(allergiesYesRb1);
+        allergiesYesRb1.setText("Yes");
+
+        patientIDTx1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SaveButtonActionPerformed(evt);
+                patientIDTx1ActionPerformed(evt);
             }
         });
 
-        patientIDlbl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        patientIDlbl.setText("Patient ID *");
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(patientIDlbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(primaryDoctorlbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lastVisitDatelbl1)
+                        .addComponent(nextAppointmentDatelbl1)
+                        .addComponent(onMedicationlbl1)
+                        .addComponent(allergieslbl1))
+                    .addGap(44, 44, 44)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(NewAppointmentDate1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(primaryDoctorTx1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(patientIDTx1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lastVisitDate1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel4Layout.createSequentialGroup()
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(allergiesYesRb1)
+                                .addComponent(onMedicationYesRb1))
+                            .addGap(36, 36, 36)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(onMedicationNoRb1)
+                                .addComponent(allergiesNoRb1))))
+                    .addContainerGap(550, Short.MAX_VALUE)))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(patientIDlbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(144, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGap(10, 10, 10)
+                    .addComponent(patientIDTx1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(primaryDoctorlbl1)
+                        .addComponent(primaryDoctorTx1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(lastVisitDatelbl1)
+                        .addComponent(lastVisitDate1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(nextAppointmentDatelbl1)
+                        .addComponent(NewAppointmentDate1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(allergieslbl1)
+                        .addComponent(allergiesYesRb1)
+                        .addComponent(allergiesNoRb1))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(onMedicationlbl1)
+                        .addComponent(onMedicationYesRb1)
+                        .addComponent(onMedicationNoRb1))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
 
-        patientIDTx.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                patientIDTxActionPerformed(evt);
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Insurance Information", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
+
+        insuranceID.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        insuranceID.setText("Insurance Company ID *");
+
+        installationlbl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        installationlbl.setText("Premium*");
+
+        statementlbl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        statementlbl.setText("Benefit Statement");
+
+        deductiblelbl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        deductiblelbl.setText("Deductible");
+
+        installmentTx.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                installmentTxKeyPressed(evt);
             }
         });
 
-        primaryDoctorlbl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        primaryDoctorlbl.setText("Primary Doctor");
+        statementTx.setColumns(20);
+        statementTx.setRows(5);
+        jScrollPane1.setViewportView(statementTx);
 
-        lastVisitDatelbl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        lastVisitDatelbl.setText("Last Visit Date");
+        deductibleTx.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                deductibleTxKeyPressed(evt);
+            }
+        });
 
-        nextAppointmentDatelbl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        nextAppointmentDatelbl.setText("Next Appointment Date");
+        insuranceTx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insuranceTxActionPerformed(evt);
+            }
+        });
 
-        buttonGroup2.add(onMedicationYesRb);
-        onMedicationYesRb.setText("Yes");
+        locationlbl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        locationlbl.setText("Location");
 
-        allergieslbl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        allergieslbl.setText("Allergies");
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(locationlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(installationlbl)
+                            .addComponent(deductiblelbl))
+                        .addGap(73, 73, 73)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(installmentTx, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(locationTx, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(deductibleTx, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(insuranceID, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(insuranceTx, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(statementlbl)
+                        .addGap(33, 33, 33)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(insuranceID, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(insuranceTx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(statementlbl))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(locationlbl)
+                            .addComponent(locationTx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(installationlbl)
+                            .addComponent(installmentTx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(deductiblelbl)
+                    .addComponent(deductibleTx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
 
-        buttonGroup1.add(allergiesNoRb);
-        allergiesNoRb.setText("No");
+        insuranceSavebtn.setBackground(new java.awt.Color(0, 0, 102));
+        insuranceSavebtn.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        insuranceSavebtn.setForeground(new java.awt.Color(255, 255, 255));
+        insuranceSavebtn.setText("Save");
+        insuranceSavebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insuranceSavebtnActionPerformed(evt);
+            }
+        });
 
-        onMedicationlbl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        onMedicationlbl.setText("On Medication");
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Doctor Information", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 12))); // NOI18N
 
-        buttonGroup2.add(onMedicationNoRb);
-        onMedicationNoRb.setText("No");
+        Specializationlbl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        Specializationlbl.setText("Specialization");
 
-        buttonGroup1.add(allergiesYesRb);
-        allergiesYesRb.setText("Yes");
+        annualIncomelbl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        annualIncomelbl.setText("Annual Income");
+
+        annualIncomeTx.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                annualIncomeTxKeyPressed(evt);
+            }
+        });
+
+        feebl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        feebl.setText("Consultation Fee ");
+
+        feeTx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                feeTxActionPerformed(evt);
+            }
+        });
+        feeTx.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                feeTxKeyPressed(evt);
+            }
+        });
+
+        namelbl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        namelbl.setText("Name*");
+
+        workcitylbl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        workcitylbl.setText("Work City");
+
+        nameTx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nameTxActionPerformed(evt);
+            }
+        });
+
+        doctorIDlbl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        doctorIDlbl.setText("Doctor ID*");
+
+        educationlbl.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
+        educationlbl.setText("Education");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(Specializationlbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(specializationTx, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(educationlbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(educationTx, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(doctorIDlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(doctorIDTx, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(namelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(nameTx, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(146, 146, 146)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(feebl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                        .addComponent(feeTx, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(workcitylbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(workcityTx, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(annualIncomelbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(annualIncomeTx, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(48, 48, 48))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(namelbl, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameTx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(workcitylbl)
+                    .addComponent(workcityTx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(doctorIDlbl)
+                    .addComponent(doctorIDTx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(annualIncomelbl)
+                    .addComponent(annualIncomeTx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(educationlbl)
+                    .addComponent(educationTx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(feebl)
+                    .addComponent(feeTx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(6, 6, 6)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(specializationTx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Specializationlbl))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(24, 24, 24)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(primaryDoctorlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(patientIDlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lastVisitDatelbl)
-                                    .addComponent(nextAppointmentDatelbl)
-                                    .addComponent(onMedicationlbl)
-                                    .addComponent(allergieslbl)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(79, 79, 79)
-                                .addComponent(ownerNamelbl)))
-                        .addGap(44, 44, 44)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(primaryDoctorTx, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(patientIDTx, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lastVisitDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NewAppointmentDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(92, 92, 92)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(allergiesNoRb)
-                                    .addComponent(onMedicationNoRb)))
-                            .addComponent(allergiesYesRb)
-                            .addComponent(onMedicationYesRb))))
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(ownerNamelbl)
+                .addGap(4, 4, 4))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(insuranceSavebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(patientIDlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(patientIDTx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(primaryDoctorlbl)
-                    .addComponent(primaryDoctorTx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lastVisitDatelbl)
-                    .addComponent(lastVisitDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(nextAppointmentDatelbl)
-                    .addComponent(NewAppointmentDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(allergieslbl)
-                    .addComponent(allergiesYesRb)
-                    .addComponent(allergiesNoRb))
-                .addGap(24, 24, 24)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(onMedicationlbl)
-                    .addComponent(onMedicationYesRb)
-                    .addComponent(onMedicationNoRb))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ownerNamelbl)
-                .addGap(56, 56, 56)
-                .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(insuranceSavebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 133, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(ownerNamelbl)))
+                .addContainerGap(261, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+    
+    private void annualIncomeTxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_annualIncomeTxKeyPressed
         // TODO add your handling code here:
-       
-        patient.setPatientId(patientIDTx.getText());
-        patient.setPrimaryDoctor(primaryDoctorTx.getText());
-        patient.setLastVisitDate(lastVisitDate.getDate());
-        patient.setNextAppointmentDate(NewAppointmentDate.getDate());
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)) {
+            annualIncomeTx.setEditable(false);
+            JOptionPane.showMessageDialog(null, "Please entry numbers only.", "Warning", JOptionPane.ERROR_MESSAGE);
+        } else {
+            annualIncomeTx.setEditable(true);
+        }
+    }//GEN-LAST:event_annualIncomeTxKeyPressed
+
+    private void feeTxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_feeTxActionPerformed
+
+    }//GEN-LAST:event_feeTxActionPerformed
+
+    private void feeTxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_feeTxKeyPressed
+        // TODO add your handling code here:   char c = evt.getKeyChar();
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)) {
+            feeTx.setEditable(false);
+            JOptionPane.showMessageDialog(null, "Please entry numbers only.", "Warning", JOptionPane.ERROR_MESSAGE);
+        } else {
+            feeTx.setEditable(true);
+        }
+
+    }//GEN-LAST:event_feeTxKeyPressed
+
+    private void nameTxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nameTxActionPerformed
+
+    private void patientIDTx1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientIDTx1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_patientIDTx1ActionPerformed
+
+    private void insuranceSavebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insuranceSavebtnActionPerformed
+        // TODO add your handling code here:
+
+         patient.setPatientId(patientIDTx1.getText());
+        patient.setPrimaryDoctor(primaryDoctorTx1.getText());
+        patient.setLastVisitDate(lastVisitDate1.getDate());
+        patient.setNextAppointmentDate(NewAppointmentDate1.getDate());
         
-        if(allergiesYesRb.isSelected())
+        if(allergiesYesRb1.isSelected())
                 patient.setHasAllergies(true);
         else  
                 patient.setHasAllergies(false);
         
-        if(onMedicationYesRb.isSelected())
+        if(onMedicationYesRb1.isSelected())
                 patient.setOnMedication(true);
         else  
                 patient.setOnMedication(false);
         
         
-        System.out.println("allergies No "+allergiesNoRb.isSelected()+"allergies Yes"+allergiesYesRb.isSelected());
-      
-        if (patientIDTx.getText().isEmpty() ){
+        
+        
+        insurance.setBenefitsStatement(statementTx.getText());
+        insurance.setCompanyId(insuranceTx.getText());
+
+        try{
+            if( !deductibleTx.getText().isBlank() || !deductibleTx.getText().isEmpty()){
+                if (deductibleTx.getText().matches("-?\\d+(\\.\\d+)?")) {
+                    double deductible = Double.parseDouble(deductibleTx.getText());
+                    insurance.setDeductible(deductible);
+                }
+            }
+
+            if( !installmentTx.getText().isBlank() || !installmentTx.getText().isEmpty()){
+                if (installmentTx.getText().matches("-?\\d+(\\.\\d+)?")) {
+                    double installmentInt = Double.parseDouble(installmentTx.getText());
+                    insurance.setInstallment(installmentInt);
+                }
+            }
+        }catch(Exception e){
+
+        }
+        insurance.setWorkLocation(locationTx.getText());
+
+        
+        
+        try{
+        if( !annualIncomeTx.getText().isBlank() || !annualIncomeTx.getText().isEmpty()){
+        if (annualIncomeTx.getText().matches("\\d+")) {
+        int  annualIncome = Integer.parseInt(annualIncomeTx.getText());
+        doctor.setAnnualIncome(annualIncome);
+        }
+        }
+        if( !feeTx.getText().isBlank() || !feeTx.getText().isEmpty()){
+        if (annualIncomeTx.getText().matches("\\d+")) {
+        int  annualIncome = Integer.parseInt(feeTx.getText());
+        doctor.setAnnualIncome(annualIncome);
+        }
+        }
+        }catch(Exception e){
+            
+        }
+        doctor.setDoctorId(doctorIDTx.getText());
+        doctor.setEducation(educationTx.getText());
+        doctor.setName(nameTx.getText());
+        doctor.setSpecialization(specializationTx.getText());
+        doctor.setWorkCity(workcityTx.getText());
+       
+        
+        
+        insurance.setBenefitsStatement(statementTx.getText());
+        insurance.setCompanyId(insuranceTx.getText());
+        
+        try{
+        if( !deductibleTx.getText().isBlank() || !deductibleTx.getText().isEmpty()){
+        if (deductibleTx.getText().matches("-?\\d+(\\.\\d+)?")) {
+        double deductible = Double.parseDouble(deductibleTx.getText());
+        insurance.setDeductible(deductible);
+        }
+        }
+        
+        if( !installmentTx.getText().isBlank() || !installmentTx.getText().isEmpty()){
+        if (installmentTx.getText().matches("-?\\d+(\\.\\d+)?")) {
+        double installmentInt = Double.parseDouble(installmentTx.getText());
+        insurance.setInstallment(installmentInt);
+        }
+        }
+        }catch(Exception e){
+            
+        }
+        insurance.setWorkLocation(locationTx.getText());
+        
+
+        if (installmentTx.getText().isEmpty() || insuranceTx.getText().isEmpty() || patientIDTx1.getText().isEmpty() || doctorIDTx.getText().isEmpty() || nameTx.getText().isEmpty() ){
             JOptionPane.showMessageDialog(null, "Please entry the required fields.", "Warning", JOptionPane.ERROR_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null, "Patient Information Saved", "Success", JOptionPane.INFORMATION_MESSAGE);
         }
-    }//GEN-LAST:event_SaveButtonActionPerformed
+      
+        
+    }//GEN-LAST:event_insuranceSavebtnActionPerformed
 
-    private void patientIDTxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientIDTxActionPerformed
+    private void installmentTxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_installmentTxKeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_patientIDTxActionPerformed
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)) {
+            installmentTx.setEditable(false);
+            JOptionPane.showMessageDialog(null, "Please enter Number only.", "Warning", JOptionPane.ERROR_MESSAGE);
+
+        } else {
+            installmentTx.setEditable(true);
+        }
+    }//GEN-LAST:event_installmentTxKeyPressed
+
+    private void deductibleTxKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_deductibleTxKeyPressed
+        // TODO add your handling code here:
+        char c = evt.getKeyChar();
+        if (Character.isLetter(c)) {
+            deductibleTx.setEditable(false);
+            JOptionPane.showMessageDialog(null, "Please enter Number only.", "Warning", JOptionPane.ERROR_MESSAGE);
+            //int ERROR_MESSAGE = JOptionPane.ERROR_MESSAGE;
+        } else {
+            deductibleTx.setEditable(true);
+        }
+    }//GEN-LAST:event_deductibleTxKeyPressed
+
+    private void insuranceTxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insuranceTxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_insuranceTxActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.toedter.calendar.JDateChooser NewAppointmentDate;
-    private javax.swing.JButton SaveButton;
-    private javax.swing.JRadioButton allergiesNoRb;
-    private javax.swing.JRadioButton allergiesYesRb;
-    private javax.swing.JLabel allergieslbl;
+    private com.toedter.calendar.JDateChooser NewAppointmentDate1;
+    private javax.swing.JLabel Specializationlbl;
+    private javax.swing.JRadioButton allergiesNoRb1;
+    private javax.swing.JRadioButton allergiesYesRb1;
+    private javax.swing.JLabel allergieslbl1;
+    private javax.swing.JTextField annualIncomeTx;
+    private javax.swing.JLabel annualIncomelbl;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
-    private com.toedter.calendar.JDateChooser lastVisitDate;
-    private javax.swing.JLabel lastVisitDatelbl;
-    private javax.swing.JLabel nextAppointmentDatelbl;
-    private javax.swing.JRadioButton onMedicationNoRb;
-    private javax.swing.JRadioButton onMedicationYesRb;
-    private javax.swing.JLabel onMedicationlbl;
+    private javax.swing.JTextField deductibleTx;
+    private javax.swing.JLabel deductiblelbl;
+    private javax.swing.JTextField doctorIDTx;
+    private javax.swing.JLabel doctorIDlbl;
+    private javax.swing.JTextField educationTx;
+    private javax.swing.JLabel educationlbl;
+    private javax.swing.JTextField feeTx;
+    private javax.swing.JLabel feebl;
+    private javax.swing.JLabel installationlbl;
+    private javax.swing.JTextField installmentTx;
+    private javax.swing.JLabel insuranceID;
+    private javax.swing.JButton insuranceSavebtn;
+    private javax.swing.JTextField insuranceTx;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private com.toedter.calendar.JDateChooser lastVisitDate1;
+    private javax.swing.JLabel lastVisitDatelbl1;
+    private javax.swing.JTextField locationTx;
+    private javax.swing.JLabel locationlbl;
+    private javax.swing.JTextField nameTx;
+    private javax.swing.JLabel namelbl;
+    private javax.swing.JLabel nextAppointmentDatelbl1;
+    private javax.swing.JRadioButton onMedicationNoRb1;
+    private javax.swing.JRadioButton onMedicationYesRb1;
+    private javax.swing.JLabel onMedicationlbl1;
     private javax.swing.JLabel ownerNamelbl;
-    private javax.swing.JTextField patientIDTx;
-    private javax.swing.JLabel patientIDlbl;
-    private javax.swing.JTextField primaryDoctorTx;
-    private javax.swing.JLabel primaryDoctorlbl;
+    private javax.swing.JTextField patientIDTx1;
+    private javax.swing.JLabel patientIDlbl1;
+    private javax.swing.JTextField primaryDoctorTx1;
+    private javax.swing.JLabel primaryDoctorlbl1;
+    private javax.swing.JTextField specializationTx;
+    private javax.swing.JTextArea statementTx;
+    private javax.swing.JLabel statementlbl;
+    private javax.swing.JTextField workcityTx;
+    private javax.swing.JLabel workcitylbl;
     // End of variables declaration//GEN-END:variables
 }

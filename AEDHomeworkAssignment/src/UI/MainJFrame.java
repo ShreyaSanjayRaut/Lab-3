@@ -53,9 +53,7 @@ public class MainJFrame extends javax.swing.JFrame {
         Driver = new javax.swing.JButton();
         VehicleRegistration = new javax.swing.JButton();
         Patient = new javax.swing.JButton();
-        Doctor = new javax.swing.JButton();
         DisplayPatientReport = new javax.swing.JButton();
-        Insurance = new javax.swing.JButton();
         WorkPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -104,16 +102,6 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        Doctor.setBackground(new java.awt.Color(0, 0, 102));
-        Doctor.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
-        Doctor.setForeground(new java.awt.Color(255, 255, 255));
-        Doctor.setText("Doctor");
-        Doctor.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DoctorActionPerformed(evt);
-            }
-        });
-
         DisplayPatientReport.setBackground(new java.awt.Color(0, 0, 102));
         DisplayPatientReport.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
         DisplayPatientReport.setForeground(new java.awt.Color(255, 255, 255));
@@ -124,16 +112,6 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        Insurance.setBackground(new java.awt.Color(0, 0, 102));
-        Insurance.setFont(new java.awt.Font("Yu Gothic UI", 1, 24)); // NOI18N
-        Insurance.setForeground(new java.awt.Color(255, 255, 255));
-        Insurance.setText("Insurance");
-        Insurance.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InsuranceActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout ControlPanelLayout = new javax.swing.GroupLayout(ControlPanel);
         ControlPanel.setLayout(ControlPanelLayout);
         ControlPanelLayout.setHorizontalGroup(
@@ -141,15 +119,13 @@ public class MainJFrame extends javax.swing.JFrame {
             .addGroup(ControlPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(ControlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Insurance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Doctor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Patient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(VehicleRegistration, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Driver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(Person, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(ControlPanelLayout.createSequentialGroup()
-                        .addComponent(DisplayPatientReport)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ControlPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(DisplayPatientReport)))
                 .addContainerGap())
         );
         ControlPanelLayout.setVerticalGroup(
@@ -164,12 +140,8 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(Patient)
                 .addGap(18, 18, 18)
-                .addComponent(Doctor)
-                .addGap(12, 12, 12)
-                .addComponent(Insurance)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(DisplayPatientReport)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
 
         SplitPane.setLeftComponent(ControlPanel);
@@ -238,21 +210,9 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void PatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatientActionPerformed
         // TODO add your handling code here:
-        PatientJPanel patientPanel = new PatientJPanel(patient);
+        PatientJPanel patientPanel = new PatientJPanel(patient, insurance, doctor);
         SplitPane.setRightComponent( patientPanel);
     }//GEN-LAST:event_PatientActionPerformed
-
-    private void DoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorActionPerformed
-        // TODO add your handling code here:
-        DoctorJPanel doctorPanel = new DoctorJPanel(doctor);
-        SplitPane.setRightComponent( doctorPanel);
-    }//GEN-LAST:event_DoctorActionPerformed
-
-    private void InsuranceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsuranceActionPerformed
-        // TODO add your handling code here:
-        InsuranceJPanel insurancePanel = new InsuranceJPanel(insurance);
-        SplitPane.setRightComponent( insurancePanel);
-    }//GEN-LAST:event_InsuranceActionPerformed
 
     /**
      * @param args the command line arguments
@@ -292,9 +252,7 @@ public class MainJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ControlPanel;
     private javax.swing.JButton DisplayPatientReport;
-    private javax.swing.JButton Doctor;
     private javax.swing.JButton Driver;
-    private javax.swing.JButton Insurance;
     private javax.swing.JButton Patient;
     private javax.swing.JButton Person;
     private javax.swing.JSplitPane SplitPane;

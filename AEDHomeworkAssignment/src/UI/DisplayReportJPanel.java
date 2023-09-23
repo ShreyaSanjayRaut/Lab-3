@@ -337,7 +337,7 @@ public class DisplayReportJPanel extends javax.swing.JPanel {
                             .addComponent(educationTx, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(DoctorJPanelLayout.createSequentialGroup()
                         .addComponent(feebl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(feeTx)))
                 .addGroup(DoctorJPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(DoctorJPanelLayout.createSequentialGroup()

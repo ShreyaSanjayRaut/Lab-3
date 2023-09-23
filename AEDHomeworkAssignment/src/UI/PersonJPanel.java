@@ -103,6 +103,11 @@ public class PersonJPanel extends javax.swing.JPanel {
         agelbl.setText("Age");
 
         ageTx.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        ageTx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ageTxActionPerformed(evt);
+            }
+        });
         ageTx.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 ageTxKeyPressed(evt);
@@ -410,6 +415,10 @@ public class PersonJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_SSNTxKeyPressed
+
+    private void ageTxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageTxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ageTxActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
